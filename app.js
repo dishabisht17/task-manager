@@ -6,14 +6,14 @@ function addTask() {
         alert("You must write a task");
         return;
     }
-            const tasks = listContainer.getElementByTagName("li");
+            const tasks = listContainer.getElementsByTagName("li");
       for(let i =0;i<tasks.length;i++){
-          let taskText = 
-            if(tasks[i].firstChild.textContent.trim().toLowerCase();
+          let taskText = tasks[i].firstChild.textContent.trim().toLowerCase();
+            if(taskText=== inputValue.toLowerCase);
                 alert("Task already exists");
                 return;
             }
-        }
+        
 
       
         const li = document.createElement("li");
