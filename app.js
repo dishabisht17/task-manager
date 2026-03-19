@@ -3,9 +3,17 @@ const listContainer = document.getElementById("list-container");
 function addTask() {
     if (inputBox.value === '') {
         alert("You must write a task");
-
+        return;
     }
     else {
+        let inputValue = inputBox.value.trim().toLowerCase();
+        let tasks = listContainer.getElementsByTagName("li");
+        for(let i =0;i<tasks.length;i++){
+            if(tasks[i].innerText.replace("x","").trim().toLowerCase()===inputValue){
+                alert("Task already exists");
+                return;
+            }
+        }
         let li = document.createElement("li");
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
