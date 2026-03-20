@@ -1,3 +1,4 @@
+
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 function addTask() {
@@ -9,10 +10,11 @@ function addTask() {
             const tasks = listContainer.getElementsByTagName("li");
       for(let i =0;i<tasks.length;i++){
           let taskText = tasks[i].firstChild.textContent.trim().toLowerCase();
-            if(taskText=== inputValue.toLowerCase);
+            if(taskText=== inputValue.toLowerCase()){
                 alert("Task already exists");
                 return;
             }
+        }
         
 
       
@@ -47,7 +49,7 @@ function showTask() {
     const data = localStorage.getItem("data");
     if(data){
         
-    listContainer.innerHTML = localStorage.getItem("data");
+    listContainer.innerHTML = data;
 }
 }
 showTask();
